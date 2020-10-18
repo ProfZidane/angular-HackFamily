@@ -1,0 +1,202 @@
+<div class="wrapper">
+
+    <div class="sign-in-page">
+        <div class="signin-popup">
+            <div class="signin-pop">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="cmp-info">
+                            <div class="cm-logo">
+                                <h2 style="color: blue;font-size: xxx-large;">HackFamily</h2>
+                                <br>
+                                <!--<img src="assets/images/cm-logo.png" alt="">-->
+                                <p>,  est une plateforme de travail freelance ou les développeurs et autres, peuvent deposer leurs projets, se faire des relations, faire des busines et du travail collaboratifs !</p>
+                            </div><!--cm-logo end-->
+                            <!--<img src="assets/images/cm-main-img.png" alt="">	-->
+                        </div><!--cmp-info end-->
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="login-sec">
+                            <ul class="sign-control">
+                                <li data-tab="tab-1" class="current"><a href="#" title="">Connexion</a></li>
+                                <li data-tab="tab-2"><a href="#" title="">Inscription</a></li>
+                            </ul>
+                            <div class="sign_in_sec current" id="tab-1">
+
+                                <h3>Connexion</h3>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-lg-12 no-pdd">
+                                            <div class="sn-field">
+                                                <input type="text" [(ngModel)] = "loginUserData.username" name="username" placeholder="Nom d'utilisateur">
+                                                <i class="la la-user"></i>
+                                            </div><!--sn-field end-->
+                                        </div>
+                                        <div class="col-lg-12 no-pdd">
+                                            <div class="sn-field">
+                                                <input type="password" [(ngModel)] = "loginUserData.password" name="password" placeholder="Mot de passe">
+                                                <i class="la la-lock"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 no-pdd">
+                                            <div class="checky-sec">
+                                                <div class="fgt-sec">
+                                                    <input type="checkbox" [(ngModel)] = "loginUserData.stay_connected" name="cc" id="c1">
+                                                    <label for="c1">
+                                                        <span></span>
+                                                    </label>
+                                                    <small>Me garder connecter</small>
+                                                </div><!--fgt-sec end-->
+                                                <a href="#" title="" class="text-danger">Mot de passe oublié ?</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 no-pdd">
+                                            <button type="submit" (click)="loginUser()"  value="submit" style="background-color:rgb(21, 21, 189)">Se connecter</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="login-resources">
+                                    <h4>Se connecter avec : </h4>
+                                    <ul>
+                                        <li><a href="#" title="" class="fb"><i class="fa fa-facebook"></i> Via Facebook</a></li>
+                                        <li><a href="#" title="" class="tw"><i class="fa fa-twitter"></i> Via Twitter</a></li>
+                                    </ul>
+                                </div><!--login-resources end-->
+                            </div><!--sign_in_sec end-->
+                            <div class="sign_in_sec" id="tab-2">
+                                <div class="signup-tab">
+                                    <i class="fa fa-long-arrow-left"></i>
+                                    <h2>zifams@example.com</h2>
+                                    <ul>
+                                        <li data-tab="tab-3" class="current" ><a href="#" title="" >Utilisateur simple</a></li>
+                                        <li data-tab="tab-4"><a href="#" title="">Entreprise</a></li>
+                                    </ul>
+                                </div><!--signup-tab end-->
+                                <div class="dff-tab current" id="tab-3">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="text" [(ngModel)]="registerUserData.name" name="name" placeholder="Nom et Prénoms">
+                                                    <i class="la la-user"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="text" [(ngModel)]="registerUserData.country" name="country" placeholder="Pays">
+                                                    <i class="la la-globe"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <select [(ngModel)]="registerUserData.skills" name="skills">
+                                                        <option disabled>Spécialité</option>
+                                                        <option>Développement Web</option>
+                                                        <option>Architecture réseau</option>
+                                                        <option>Data Science</option>
+                                                        <option>Intelligence Artificielle</option>
+                                                    </select>
+                                                    <i class="la la-dropbox"></i>
+                                                    <span><i class="fa fa-ellipsis-h"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="password" [(ngModel)]="registerUserData.password" name="password" placeholder="Mot de passe">
+                                                    <i class="la la-lock"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="password" [(ngModel)]="registerUserData.repeat_password" name="repeat-password" placeholder="Re-entrer le mot de passe">
+                                                    <i class="la la-lock"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="checky-sec st2">
+                                                    <div class="fgt-sec">
+                                                        <input type="checkbox" [(ngModel)]="registerUserData.termes_condition" name="cc" id="c2">
+                                                        <label for="c2">
+                                                            <span></span>
+                                                        </label>
+                                                        <small>Oui, j'ai compris et j'accepte les termes et conditions de ZiFamily.</small>
+                                                    </div><!--fgt-sec end-->
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <button type="submit" (click)="registerUser()"  value="submit" style="background-color: rgb(21, 21, 189);">Démarrer</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div><!--dff-tab end-->
+                                <div class="dff-tab" id="tab-4">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="text" [(ngModel)]="registerEntrepriseData.name" name="company-name" placeholder="Nom de l'Entreprise">
+                                                    <i class="la la-building"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="text" [(ngModel)]="registerEntrepriseData.country" name="country" placeholder="Pays">
+                                                    <i class="la la-globe"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="password" [(ngModel)]="registerEntrepriseData.password" name="password" placeholder="Mot de passe">
+                                                    <i class="la la-lock"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="password" [(ngModel)]="registerEntrepriseData.repeat_password" name="repeat-password" placeholder="Re-entrer le  mot de passe">
+                                                    <i class="la la-lock"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="checky-sec st2">
+                                                    <div class="fgt-sec">
+                                                        <input type="checkbox" [(ngModel)]="registerEntrepriseData.termes_condition" name="cc" id="c3">
+                                                        <label for="c3">
+                                                            <span></span>
+                                                        </label>
+                                                        <small>Oui, j'ai compris et j'accepte les termes et conditions de ZiFamily.</small>
+                                                    </div><!--fgt-sec end-->
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12 no-pdd">
+                                                <button type="submit" (click)="registerEntreprise()" value="submit" style="background-color: rgb(21, 21, 189);">Démarrer</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div><!--dff-tab end-->
+                            </div>
+                        </div><!--login-sec end-->
+                    </div>
+                </div>
+            </div><!--signin-pop end-->
+        </div><!--signin-popup end-->
+        <div class="footy-sec">
+            <div class="container">
+                <!--<ul>
+                    <li><a href="help-center.html" title="">Help Center</a></li>
+                    <li><a href="about.html" title="">About</a></li>
+                    <li><a href="#" title="">Privacy Policy</a></li>
+                    <li><a href="#" title="">Community Guidelines</a></li>
+                    <li><a href="#" title="">Cookies Policy</a></li>
+                    <li><a href="#" title="">Career</a></li>
+                    <li><a href="forum.html" title="">Forum</a></li>
+                    <li><a href="#" title="">Language</a></li>
+                    <li><a href="#" title="">Copyright Policy</a></li>
+                </ul>-->
+                <p><img src="assets/images/copy-icon.png" alt="">Copyright 2020</p>
+            </div>
+        </div><!--footy-sec end-->
+    </div><!--sign-in-page end-->
+
+
+</div>
